@@ -29,6 +29,9 @@ final class LoadingScreenRouter {
 extension LoadingScreenRouter: LoadingScreenRouterInputProtocol {
     
     func moveToMenuScreen() {
-        print("Router")
+        navigationController.popToRootViewController(animated: false)
+        let clearNavigationController = UINavigationController()
+        window.rootViewController = clearNavigationController
+        let _ = MenuScreenRouter(navigationController: clearNavigationController, window: window)
     }
 }

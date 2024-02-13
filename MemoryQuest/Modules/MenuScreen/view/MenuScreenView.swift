@@ -1,29 +1,79 @@
-//
-//  MenuScreenView.swift
-//  MemoryQuest
-//
-//  Created by Maks on 13.02.24.
-//
-
 import UIKit
 
-class MenuScreenView: UIViewController {
+//MARK: - Final class MenuScreenView
 
+final class MenuScreenView: UIViewController {
+    
+    
+    //MARK: - Properties of class
+    
+    var presenter: MenuScreenPresenterProtocol!
+   
+    private let mainContainerView = UIView()
+    private let backgroundImageView = UIImageView()
+    
+    
+    
+    //MARK: - Lifecycle of controller
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        addSubviews()
+        setConstraintes()
+        configureUI()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    
+    //MARK: - Configurations of Navigation bar
+    
+    private func configureNavBar() {
+        
+        navigationController?.tabBarController?.tabBar.isHidden = true
     }
-    */
+    
+    
+    
+//MARK: - Adding of subviews
+    
+    private func addSubviews() {
+        
+        view.addSubview(mainContainerView)
+        mainContainerView.addSubviews(for: backgroundImageView)
+    }
+    
+    
+    
+    //MARK: - Setting of constraintes
+    
+    private func setConstraintes() {
+        
+        mainContainerView.translatesAutoresizingMaskIntoConstraints = false
+        mainContainerView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        mainContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        mainContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        mainContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
+        backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
+        backgroundImageView.topAnchor.constraint(equalTo: mainContainerView.topAnchor).isActive = true
+        backgroundImageView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor).isActive = true
+        backgroundImageView.trailingAnchor.constraint(equalTo: mainContainerView.trailingAnchor).isActive = true
+        backgroundImageView.bottomAnchor.constraint(equalTo: mainContainerView.bottomAnchor).isActive = true
+    }
+    
+    
+    
+    //MARK: - Configuration of User Interface
+    
+    private func configureUI() {
+        
+        backgroundImageView.image = UIImage(named: "backgroundMenu")
+        backgroundImageView.contentMode = .scaleAspectFill
+    }
 }
+
+
+
+//MARK: - Implemendation of AddNewInfoInterractorInputProtocol protocol for AddNewInfoInterractor class
+
