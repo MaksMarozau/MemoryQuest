@@ -51,5 +51,6 @@ extension MenuScreenRouter: MenuScreenRouterInputProtocol {
     
     func moveToGameScreen() {
         
+        let _ = GamePlayScreenRouter(navigationController: navigationController, window: window)
     }
 }
