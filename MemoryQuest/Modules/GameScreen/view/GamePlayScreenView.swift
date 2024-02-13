@@ -197,7 +197,7 @@ final class GamePlayScreenView: UIViewController {
         
         mediumModeLabel.text = "1"
         
-        settingButton.setBackgroundImage(UIImage(named: "settingButtonImage"), for: .normal)
+        settingButton.setBackgroundImage(UIImage(named: "settingsButtonImage"), for: .normal)
         settingButton.contentMode = .scaleAspectFit
     }
     

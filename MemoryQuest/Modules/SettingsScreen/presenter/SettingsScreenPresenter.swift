@@ -2,7 +2,7 @@
 
 protocol SettingsScreenPresenterProtocol {
     
-    
+    func back()
 }
 
 
@@ -26,6 +26,11 @@ final class SettingsScreenPresenter {
 //MARK: - Implemendation of the LoadingScreenPresenterProtocol
 
 extension SettingsScreenPresenter: SettingsScreenPresenterProtocol {
+    
+    func back() {
+        router.moveBack()
+    }
+    
     
     
 }

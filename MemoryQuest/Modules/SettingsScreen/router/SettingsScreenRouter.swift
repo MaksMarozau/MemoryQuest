@@ -4,6 +4,7 @@ import UIKit
 
 protocol SettingsScreenRouterInputProtocol {
     
+    func moveBack()
 }
 
 
@@ -29,7 +30,7 @@ final class SettingsScreenRouter {
         let presenter = SettingsScreenPresenter(router: self)
         view.presenter = presenter
         
-        navigationController.pushViewController(view, animated: true)
+        navigationController.pushViewController(view, animated: false)
     }
 }
 
@@ -39,11 +40,11 @@ final class SettingsScreenRouter {
 
 extension SettingsScreenRouter: SettingsScreenRouterInputProtocol {
     
-    func moveToMenuScreen() {
-        navigationController.popToRootViewController(animated: false)
-        let clearNavigationController = UINavigationController()
-        window.rootViewController = clearNavigationController
-        let _ =
+    func moveBack() {
+        navigationController.popViewController(animated: false)
     }
+    
+    
+        
 }
 

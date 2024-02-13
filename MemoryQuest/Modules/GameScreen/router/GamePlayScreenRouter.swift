@@ -42,7 +42,7 @@ final class GamePlayScreenRouter {
 extension GamePlayScreenRouter: GamePlayScreenRouterInputProtocol {
     
     func moveToSettingsScreen() {
-        
+        let _ = SettingsScreenRouter(navigationController: navigationController, window: window)
     }
     
     
