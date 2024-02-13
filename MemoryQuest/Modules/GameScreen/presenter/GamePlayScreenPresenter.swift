@@ -3,6 +3,7 @@
 protocol GamePlayScreenPresenterProtocol {
     
     func endOfTheGame()
+    func openSettings()
 }
 
 
@@ -26,6 +27,11 @@ final class GamePlayScreenPresenter {
 //MARK: - Implemendation of the GamePlayScreenPresenterProtocol
 
 extension GamePlayScreenPresenter: GamePlayScreenPresenterProtocol {
+    
+    func openSettings() {
+        router.moveToSettingsScreen()
+    }
+    
     
     func endOfTheGame() {
         router.moveToWinScreen()

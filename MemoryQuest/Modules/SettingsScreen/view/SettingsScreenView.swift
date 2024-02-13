@@ -1,17 +1,17 @@
 import UIKit
 
-//MARK: - Final class <#Class#>
+//MARK: - Final class SettingsScreenView
 
-final class <#Class#>: UIViewController {
+final class SettingsScreenView: UIViewController {
     
     
-    //MARK: - Properties of class
+//MARK: - Properties of class
     
-    private let <#Propertie#>
+    var presenter: SettingsScreenPresenterProtocol!
     
     
     
-    //MARK: - Lifecycle of controller
+//MARK: - Lifecycle of controller
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,7 @@ final class <#Class#>: UIViewController {
     
     
     
-    //MARK: - Configurations of Navigation bar
+//MARK: - Configurations of Navigation bar
     
     private func configureNavBar() {
         
@@ -28,7 +28,7 @@ final class <#Class#>: UIViewController {
     
     
     
-    //MARK: - Setting of constraintes
+//MARK: - Setting of constraintes
     
     private func setConstraintes() {
         
@@ -36,7 +36,7 @@ final class <#Class#>: UIViewController {
     
     
     
-    //MARK: - Configuration of User Interface
+//MARK: - Configuration of User Interface
     
     private func configureUI() {
         

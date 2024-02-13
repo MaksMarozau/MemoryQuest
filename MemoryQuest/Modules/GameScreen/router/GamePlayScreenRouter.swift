@@ -5,6 +5,7 @@ import UIKit
 protocol GamePlayScreenRouterInputProtocol {
     
     func moveToWinScreen()
+    func moveToSettingsScreen()
 }
 
 
@@ -39,6 +40,11 @@ final class GamePlayScreenRouter {
 //MARK: - Implemendation of the GamePlayScreenRouterInputProtocol
 
 extension GamePlayScreenRouter: GamePlayScreenRouterInputProtocol {
+    
+    func moveToSettingsScreen() {
+        
+    }
+    
     
     func moveToWinScreen() {
         

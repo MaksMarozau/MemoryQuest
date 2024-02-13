@@ -20,7 +20,7 @@ final class GamePlayScreenView: UIViewController {
     private let mediumModeImageView = UIImageView()
     private let scoreLabel = UILabel()
     private let mediumModeLabel = UILabel()
-    private let settingButton = UIButton()
+    @objc private let settingButton = UIButton()
     
     private let ballButtonsContainerView = UIView()
     private let topBallButton = UIButton()
@@ -207,19 +207,64 @@ final class GamePlayScreenView: UIViewController {
     
     private func setButtonsTargets() {
         
-        topBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
-        leftBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
-        bottomBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
-        rightBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        topBallButton.addTarget(self, action: #selector(topBallButtonTouchDown), for: .touchDown)
+        topBallButton.addTarget(self, action: #selector(topBallButtonTouchUp), for: .touchUpInside)
 
-        settingButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        leftBallButton.addTarget(self, action: #selector(leftBallButtonTouchDown), for: .touchDown)
+        leftBallButton.addTarget(self, action: #selector(leftBallButtonTouchUp), for: .touchUpInside)
+
+        bottomBallButton.addTarget(self, action: #selector(bottomBallButtonTouchDown), for: .touchDown)
+        bottomBallButton.addTarget(self, action: #selector(bottomBallButtonTouchUp), for: .touchUpInside)
+
+        rightBallButton.addTarget(self, action: #selector(rightBallButtonTouchDown), for: .touchDown)
+        rightBallButton.addTarget(self, action: #selector(rightBallButtonTouchUp), for: .touchUpInside)
+
+        settingButton.addTarget(self, action: #selector(settingButtonTapped), for: .touchUpInside)
     }
     
     
     
 //MARK: - Actions
     
+    @objc private func topBallButtonTouchDown() {
+        ballImageView.image = UIImage(named: "ballTop")
+    }
     
+    @objc private func topBallButtonTouchUp() {
+        ballImageView.image = UIImage(named: "ballOff")
+    }
+    
+    
+    @objc private func leftBallButtonTouchDown() {
+        ballImageView.image = UIImage(named: "ballLeft")
+    }
+    
+    @objc private func leftBallButtonTouchUp() {
+        ballImageView.image = UIImage(named: "ballOff")
+    }
+    
+    
+    @objc private func bottomBallButtonTouchDown() {
+        ballImageView.image = UIImage(named: "ballBot")
+    }
+    
+    @objc private func bottomBallButtonTouchUp() {
+        ballImageView.image = UIImage(named: "ballOff")
+    }
+    
+    
+    @objc private func rightBallButtonTouchDown() {
+        ballImageView.image = UIImage(named: "ballRight")
+    }
+    
+    @objc private func rightBallButtonTouchUp() {
+        ballImageView.image = UIImage(named: "ballOff")
+    }
+    
+    
+    @objc private func settingButtonTapped() {
+        presenter.openSettings()
+    }
 }
 
 
