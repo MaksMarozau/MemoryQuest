@@ -15,6 +15,9 @@
 		2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9F62B7B618E003C74AD /* LoadingScreenPresenter.swift */; };
 		2DC6E9FB2B7B646C003C74AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9FA2B7B646C003C74AD /* UIView + Extension.swift */; };
 		2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */; };
+		2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */; };
+		2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */; };
+		2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		2DC6E9F62B7B618E003C74AD /* LoadingScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenPresenter.swift; sourceTree = "<group>"; };
 		2DC6E9FA2B7B646C003C74AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				2DC6E9F02B7B610E003C74AD /* LoadingScreen */,
+				2DC6E9FF2B7B7A27003C74AD /* MenuScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -141,6 +148,40 @@
 			isa = PBXGroup;
 			children = (
 				2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6E9FF2B7B7A27003C74AD /* MenuScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA002B7B7A33003C74AD /* view */,
+				2DC6EA032B7B7A77003C74AD /* presenter */,
+				2DC6EA042B7B7A7E003C74AD /* router */,
+			);
+			path = MenuScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA002B7B7A33003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA032B7B7A77003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA042B7B7A7E003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */,
 			);
 			path = router;
 			sourceTree = "<group>";
@@ -215,10 +256,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */,
 				2DC6E9DB2B7B5DAD003C74AD /* AppDelegate.swift in Sources */,
+				2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */,
 				2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */,
 				2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */,
 				2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */,
+				2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */,
 				2DC6E9FB2B7B646C003C74AD /* UIView + Extension.swift in Sources */,
 				2DC6E9F52B7B616A003C74AD /* LoadingScreenView.swift in Sources */,
 			);
