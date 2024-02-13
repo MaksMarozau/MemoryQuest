@@ -1,8 +1,9 @@
-//MARK: - Protocol for expansion MenuScreenPresenter. Will be worked out when the loading process will be finished
+//MARK: - Protocol for expansion MenuScreenPresenter. Processing click logic
 
 protocol MenuScreenPresenterProtocol {
     
-    
+    func playNow()
+    func openPrivacyPolicy()
 }
 
 
@@ -23,10 +24,16 @@ final class MenuScreenPresenter {
 
 
 
-//MARK: - Implemendation of the LoadingScreenPresenterProtocol
+//MARK: - Implemendation of the MenuScreenPresenterProtocol
 
 extension MenuScreenPresenter: MenuScreenPresenterProtocol {
     
+    func playNow() {
+        router.moveToGameScreen()
+    }
     
+    
+    func openPrivacyPolicy() {
+        router.moveToPrivacyPolicyScreen()
+    }
 }
-
