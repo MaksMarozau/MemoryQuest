@@ -18,6 +18,9 @@
 		2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */; };
 		2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */; };
 		2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */; };
+		2DC6EA0E2B7BA1EF003C74AD /* GamePlayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */; };
+		2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */; };
+		2DC6EA122B7BA212003C74AD /* GamePlayScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenView.swift; sourceTree = "<group>"; };
 		2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenPresenter.swift; sourceTree = "<group>"; };
 		2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +114,7 @@
 			children = (
 				2DC6E9F02B7B610E003C74AD /* LoadingScreen */,
 				2DC6E9FF2B7B7A27003C74AD /* MenuScreen */,
+				2DC6EA092B7BA1AA003C74AD /* GameScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -186,6 +193,40 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		2DC6EA092B7BA1AA003C74AD /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0A2B7BA1B5003C74AD /* view */,
+				2DC6EA0B2B7BA1BA003C74AD /* presenter */,
+				2DC6EA0C2B7BA1C3003C74AD /* router */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA0A2B7BA1B5003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA0B2B7BA1BA003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA0C2B7BA1C3003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,10 +297,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC6EA122B7BA212003C74AD /* GamePlayScreenRouter.swift in Sources */,
 				2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */,
 				2DC6E9DB2B7B5DAD003C74AD /* AppDelegate.swift in Sources */,
 				2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */,
 				2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */,
+				2DC6EA0E2B7BA1EF003C74AD /* GamePlayScreenView.swift in Sources */,
+				2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */,
 				2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */,
 				2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */,
 				2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */,

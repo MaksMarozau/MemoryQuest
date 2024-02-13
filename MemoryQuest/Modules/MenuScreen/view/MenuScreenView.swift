@@ -29,6 +29,13 @@ final class MenuScreenView: UIViewController {
     }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavBar()
+    }
+    
+    
     
 //MARK: - Configurations of Navigation bar
     
