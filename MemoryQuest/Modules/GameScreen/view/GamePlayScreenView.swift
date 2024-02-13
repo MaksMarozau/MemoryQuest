@@ -17,8 +17,16 @@ final class GamePlayScreenView: UIViewController {
     private let topContainerView = UIView()
     private let scoresContainerView = UIView()
     private let scoreImageView = UIImageView()
-    private let recordImageView = UIImageView()
+    private let mediumModeImageView = UIImageView()
+    private let scoreLabel = UILabel()
+    private let mediumModeLabel = UILabel()
+    private let settingButton = UIButton()
     
+    private let ballButtonsContainerView = UIView()
+    private let topBallButton = UIButton()
+    private let leftBallButton = UIButton()
+    private let bottomBallButton = UIButton()
+    private let rightBallButton = UIButton()
     
     
     
@@ -30,6 +38,7 @@ final class GamePlayScreenView: UIViewController {
         addSubviews()
         setConstraintes()
         configureUI()
+        setButtonsTargets()
     }
     
     
@@ -57,9 +66,16 @@ final class GamePlayScreenView: UIViewController {
             
             view.addSubview(mainContainerView)
             mainContainerView.addSubviews(for: backgroundImageView, centerContainerView, topContainerView)
-            centerContainerView.addSubview(ballImageView)
-            topContainerView.addSubviews(for: scoresContainerView)
-            scoresContainerView.addSubviews(for: scoreImageView, recordImageView)
+            centerContainerView.addSubviews(for: ballImageView, ballButtonsContainerView)
+            centerContainerView.insertSubview(ballButtonsContainerView, at: 1)
+            
+            topContainerView.addSubviews(for: scoresContainerView, settingButton)
+            scoresContainerView.addSubviews(for: scoreImageView, mediumModeImageView)
+            
+            scoreImageView.addSubview(scoreLabel)
+            mediumModeImageView.addSubview(mediumModeLabel)
+            
+            ballButtonsContainerView.addSubviews(for: topBallButton, leftBallButton, bottomBallButton, rightBallButton)
         }
     
     
@@ -94,7 +110,7 @@ final class GamePlayScreenView: UIViewController {
         
         topContainerView.translatesAutoresizingMaskIntoConstraints = false
         topContainerView.topAnchor.constraint(equalTo: mainContainerView.safeAreaLayoutGuide.topAnchor).isActive = true
-        topContainerView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor, constant: 21).isActive = true
+        topContainerView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor, constant: 12).isActive = true
         topContainerView.trailingAnchor.constraint(equalTo: mainContainerView.trailingAnchor, constant: -21).isActive = true
         topContainerView.heightAnchor.constraint(equalToConstant: 55).isActive = true
 
@@ -108,10 +124,55 @@ final class GamePlayScreenView: UIViewController {
         scoreImageView.heightAnchor.constraint(equalTo: scoresContainerView.heightAnchor).isActive = true
         scoreImageView.widthAnchor.constraint(equalTo: scoresContainerView.widthAnchor, multiplier: 0.45).isActive = true
         
-        recordImageView.translatesAutoresizingMaskIntoConstraints = false
-        recordImageView.leadingAnchor.constraint(equalTo: scoresContainerView.leadingAnchor).isActive = true
-        recordImageView.heightAnchor.constraint(equalTo: scoresContainerView.heightAnchor).isActive = true
-        recordImageView.widthAnchor.constraint(equalTo: scoresContainerView.widthAnchor, multiplier: 0.45).isActive = true
+        mediumModeImageView.translatesAutoresizingMaskIntoConstraints = false
+        mediumModeImageView.leadingAnchor.constraint(equalTo: scoresContainerView.leadingAnchor).isActive = true
+        mediumModeImageView.heightAnchor.constraint(equalTo: scoresContainerView.heightAnchor).isActive = true
+        mediumModeImageView.widthAnchor.constraint(equalTo: scoresContainerView.widthAnchor, multiplier: 0.45).isActive = true
+        
+        scoreLabel.translatesAutoresizingMaskIntoConstraints = false
+        scoreLabel.centerYAnchor.constraint(equalTo: scoreImageView.centerYAnchor).isActive = true
+        scoreLabel.heightAnchor.constraint(equalTo: scoreImageView.heightAnchor, multiplier: 0.8).isActive = true
+        scoreLabel.trailingAnchor.constraint(equalTo: scoreImageView.trailingAnchor, constant: -22).isActive = true
+        
+        mediumModeLabel.translatesAutoresizingMaskIntoConstraints = false
+        mediumModeLabel.centerYAnchor.constraint(equalTo: mediumModeImageView.centerYAnchor).isActive = true
+        mediumModeLabel.heightAnchor.constraint(equalTo: mediumModeImageView.heightAnchor, multiplier: 0.8).isActive = true
+        mediumModeLabel.trailingAnchor.constraint(equalTo: mediumModeImageView.trailingAnchor, constant: -22).isActive = true
+        
+        settingButton.translatesAutoresizingMaskIntoConstraints = false
+        settingButton.leadingAnchor.constraint(equalTo: topContainerView.leadingAnchor).isActive = true
+        settingButton.heightAnchor.constraint(equalTo: topContainerView.heightAnchor).isActive = true
+        settingButton.widthAnchor.constraint(equalTo: settingButton.heightAnchor).isActive = true
+        
+        ballButtonsContainerView.translatesAutoresizingMaskIntoConstraints = false
+        ballButtonsContainerView.centerXAnchor.constraint(equalTo: ballImageView.centerXAnchor).isActive = true
+        ballButtonsContainerView.centerYAnchor.constraint(equalTo: ballImageView.centerYAnchor).isActive = true
+        ballButtonsContainerView.heightAnchor.constraint(equalTo: ballImageView.heightAnchor, multiplier: 0.9).isActive = true
+        ballButtonsContainerView.widthAnchor.constraint(equalTo: ballImageView.widthAnchor, multiplier: 0.9).isActive = true
+        
+        topBallButton.translatesAutoresizingMaskIntoConstraints = false
+        topBallButton.centerXAnchor.constraint(equalTo: ballButtonsContainerView.centerXAnchor, constant: -14).isActive = true
+        topBallButton.topAnchor.constraint(equalTo: ballButtonsContainerView.topAnchor).isActive = true
+        topBallButton.heightAnchor.constraint(equalTo: ballButtonsContainerView.heightAnchor, multiplier: 0.35).isActive = true
+        topBallButton.widthAnchor.constraint(equalTo: ballButtonsContainerView.widthAnchor, multiplier: 0.35).isActive = true
+        
+        leftBallButton.translatesAutoresizingMaskIntoConstraints = false
+        leftBallButton.centerYAnchor.constraint(equalTo: ballButtonsContainerView.centerYAnchor, constant: 12).isActive = true
+        leftBallButton.leadingAnchor.constraint(equalTo: ballButtonsContainerView.leadingAnchor).isActive = true
+        leftBallButton.heightAnchor.constraint(equalTo: ballButtonsContainerView.heightAnchor, multiplier: 0.35).isActive = true
+        leftBallButton.widthAnchor.constraint(equalTo: ballButtonsContainerView.widthAnchor, multiplier: 0.35).isActive = true
+        
+        bottomBallButton.translatesAutoresizingMaskIntoConstraints = false
+        bottomBallButton.centerXAnchor.constraint(equalTo: ballButtonsContainerView.centerXAnchor, constant: 12).isActive = true
+        bottomBallButton.bottomAnchor.constraint(equalTo: ballButtonsContainerView.bottomAnchor).isActive = true
+        bottomBallButton.heightAnchor.constraint(equalTo: ballButtonsContainerView.heightAnchor, multiplier: 0.35).isActive = true
+        bottomBallButton.widthAnchor.constraint(equalTo: ballButtonsContainerView.widthAnchor, multiplier: 0.35).isActive = true
+        
+        rightBallButton.translatesAutoresizingMaskIntoConstraints = false
+        rightBallButton.centerYAnchor.constraint(equalTo: ballButtonsContainerView.centerYAnchor, constant: -14).isActive = true
+        rightBallButton.trailingAnchor.constraint(equalTo: ballButtonsContainerView.trailingAnchor).isActive = true
+        rightBallButton.heightAnchor.constraint(equalTo: ballButtonsContainerView.heightAnchor, multiplier: 0.35).isActive = true
+        rightBallButton.widthAnchor.constraint(equalTo: ballButtonsContainerView.widthAnchor, multiplier: 0.35).isActive = true
     }
     
     
@@ -129,9 +190,36 @@ final class GamePlayScreenView: UIViewController {
         scoreImageView.image = UIImage(named: "scoreTitleImage")
         scoreImageView.contentMode = .scaleAspectFit
         
-        recordImageView.image = UIImage(named: "recordTitleImage")
-        recordImageView.contentMode = .scaleAspectFit
+        mediumModeImageView.image = UIImage(named: "mediumModeTitleImage")
+        mediumModeImageView.contentMode = .scaleAspectFit
+        
+        scoreLabel.text = "63"
+        
+        mediumModeLabel.text = "1"
+        
+        settingButton.setBackgroundImage(UIImage(named: "settingButtonImage"), for: .normal)
+        settingButton.contentMode = .scaleAspectFit
     }
+    
+    
+    
+//MARK: - Setting of targets for buttons
+    
+    private func setButtonsTargets() {
+        
+        topBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        leftBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        bottomBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+        rightBallButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+
+        settingButton.addTarget(self, action: #selector(<#T##@objc method#>), for: .touchUpInside)
+    }
+    
+    
+    
+//MARK: - Actions
+    
+    
 }
 
 
