@@ -1,6 +1,6 @@
 protocol LoadingScreenPresenterProtocol {
     
-    
+    func loadingFinished()
 }
 
 
@@ -15,7 +15,9 @@ final class LoadingScreenPresenter {
 }
 
 
-extension LoadingScreenPresenter: LoadingScreenPresenterProtocol{
+extension LoadingScreenPresenter: LoadingScreenPresenterProtocol {
     
-    
+    func loadingFinished() {
+        router.moveToMenuScreen()
+    }
 }

@@ -2,6 +2,7 @@ import UIKit
 
 protocol LoadingScreenRouterInputProtocol {
     
+    func moveToMenuScreen()
 }
 
 
@@ -21,13 +22,13 @@ final class LoadingScreenRouter {
         
         navigationController.pushViewController(view, animated: true)
     }
-    
-    
 }
 
 
 
 extension LoadingScreenRouter: LoadingScreenRouterInputProtocol {
     
-    
+    func moveToMenuScreen() {
+        print("Router")
+    }
 }
