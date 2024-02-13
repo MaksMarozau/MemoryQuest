@@ -1,3 +1,5 @@
+//MARK: - Protocol for expansion LoadingScreenPresenter. Will be worked out when the loading process will be finished
+
 protocol LoadingScreenPresenterProtocol {
     
     func loadingFinished()
@@ -5,7 +7,12 @@ protocol LoadingScreenPresenterProtocol {
 
 
 
+//MARK: - Final class LoadingScreenPresenter
+
 final class LoadingScreenPresenter {
+    
+
+//MARK: - Properties and init of class
     
     let router: LoadingScreenRouterInputProtocol
     
@@ -14,6 +21,9 @@ final class LoadingScreenPresenter {
     }
 }
 
+
+
+//MARK: - Implemendation of the LoadingScreenPresenterProtocol
 
 extension LoadingScreenPresenter: LoadingScreenPresenterProtocol {
     

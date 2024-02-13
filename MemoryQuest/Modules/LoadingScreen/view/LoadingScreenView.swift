@@ -21,9 +21,7 @@ final class LoadingScreenView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.addSubview(mainContainerView)
-        mainContainerView.addSubviews(with: screenImageView, ballImageView, loadingImageView)
-        
+        addSubviews()
         setConstraintes()
         configureUI()
     }
@@ -40,7 +38,7 @@ final class LoadingScreenView: UIViewController {
         super.viewDidAppear(animated)
         
         loadingAnimation()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             self.presenter.loadingFinished()
         }
     }
@@ -52,6 +50,16 @@ final class LoadingScreenView: UIViewController {
     private func configureNavBar() {
         
         navigationController?.tabBarController?.tabBar.isHidden = true
+    }
+    
+    
+    
+//MARK: - Adding of subviews
+        
+    private func addSubviews() {
+        
+        view.addSubview(mainContainerView)
+        mainContainerView.addSubviews(for: screenImageView, ballImageView, loadingImageView)
     }
     
     
