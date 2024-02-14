@@ -1,5 +1,16 @@
 import UIKit
 
+//MARK: - Protocol for expansion GamePlayScreenPresenter. The logical methods of the game
+
+protocol GamePlayScreenInputProtocol: AnyObject {
+    
+    func lightning(with imageNameArray: [String])
+    func preparationForExersice(_ counter: Int)
+    func updateScoreLabel(with data: String)
+}
+
+
+
 //MARK: - Final class GamePlayScreenView
 
 final class GamePlayScreenView: UIViewController {
@@ -7,7 +18,8 @@ final class GamePlayScreenView: UIViewController {
     
 //MARK: - Properties of class
     
-    var presenter: GamePlayScreenPresenterProtocol!
+    var presenterRouting: GamePlayScreenPresenterRoutingProtocol!
+    var presenterHandler: GamePlayScreenPresenterHandlerProtocol!
     
     private let mainContainerView = UIView()
     private let backgroundImageView = UIImageView()
@@ -39,6 +51,7 @@ final class GamePlayScreenView: UIViewController {
         setConstraintes()
         configureUI()
         setButtonsTargets()
+        startGame()
     }
     
     
@@ -46,6 +59,11 @@ final class GamePlayScreenView: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavBar()
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
     
     
@@ -61,22 +79,22 @@ final class GamePlayScreenView: UIViewController {
     
     
 //MARK: - Adding of subviews
+    
+    private func addSubviews() {
         
-        private func addSubviews() {
-            
-            view.addSubview(mainContainerView)
-            mainContainerView.addSubviews(for: backgroundImageView, centerContainerView, topContainerView)
-            centerContainerView.addSubviews(for: ballImageView, ballButtonsContainerView)
-            centerContainerView.insertSubview(ballButtonsContainerView, at: 1)
-            
-            topContainerView.addSubviews(for: scoresContainerView, settingButton)
-            scoresContainerView.addSubviews(for: scoreImageView, mediumModeImageView)
-            
-            scoreImageView.addSubview(scoreLabel)
-            mediumModeImageView.addSubview(mediumModeLabel)
-            
-            ballButtonsContainerView.addSubviews(for: topBallButton, leftBallButton, bottomBallButton, rightBallButton)
-        }
+        view.addSubview(mainContainerView)
+        mainContainerView.addSubviews(for: backgroundImageView, centerContainerView, topContainerView)
+        centerContainerView.addSubviews(for: ballImageView, ballButtonsContainerView)
+        centerContainerView.insertSubview(ballButtonsContainerView, at: 1)
+        
+        topContainerView.addSubviews(for: scoresContainerView, settingButton)
+        scoresContainerView.addSubviews(for: scoreImageView, mediumModeImageView)
+        
+        scoreImageView.addSubview(scoreLabel)
+        mediumModeImageView.addSubview(mediumModeLabel)
+        
+        ballButtonsContainerView.addSubviews(for: topBallButton, leftBallButton, bottomBallButton, rightBallButton)
+    }
     
     
     
@@ -89,7 +107,7 @@ final class GamePlayScreenView: UIViewController {
         mainContainerView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         mainContainerView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         mainContainerView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-
+        
         backgroundImageView.translatesAutoresizingMaskIntoConstraints = false
         backgroundImageView.topAnchor.constraint(equalTo: mainContainerView.topAnchor).isActive = true
         backgroundImageView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor).isActive = true
@@ -113,7 +131,7 @@ final class GamePlayScreenView: UIViewController {
         topContainerView.leadingAnchor.constraint(equalTo: mainContainerView.leadingAnchor, constant: 12).isActive = true
         topContainerView.trailingAnchor.constraint(equalTo: mainContainerView.trailingAnchor, constant: -21).isActive = true
         topContainerView.heightAnchor.constraint(equalToConstant: 55).isActive = true
-
+        
         scoresContainerView.translatesAutoresizingMaskIntoConstraints = false
         scoresContainerView.trailingAnchor.constraint(equalTo: topContainerView.trailingAnchor).isActive = true
         scoresContainerView.heightAnchor.constraint(equalTo: topContainerView.heightAnchor).isActive = true
@@ -193,10 +211,10 @@ final class GamePlayScreenView: UIViewController {
         mediumModeImageView.image = UIImage(named: "mediumModeTitleImage")
         mediumModeImageView.contentMode = .scaleAspectFit
         
-        scoreLabel.text = "63"
+        scoreLabel.text = "0"
         scoreLabel.textColor = .white
         
-        mediumModeLabel.text = "1"
+        mediumModeLabel.text = "0"
         mediumModeLabel.textColor = .white
         
         settingButton.setBackgroundImage(UIImage(named: "settingsButtonImage"), for: .normal)
@@ -211,16 +229,16 @@ final class GamePlayScreenView: UIViewController {
         
         topBallButton.addTarget(self, action: #selector(topBallButtonTouchDown), for: .touchDown)
         topBallButton.addTarget(self, action: #selector(topBallButtonTouchUp), for: .touchUpInside)
-
+        
         leftBallButton.addTarget(self, action: #selector(leftBallButtonTouchDown), for: .touchDown)
         leftBallButton.addTarget(self, action: #selector(leftBallButtonTouchUp), for: .touchUpInside)
-
+        
         bottomBallButton.addTarget(self, action: #selector(bottomBallButtonTouchDown), for: .touchDown)
         bottomBallButton.addTarget(self, action: #selector(bottomBallButtonTouchUp), for: .touchUpInside)
-
+        
         rightBallButton.addTarget(self, action: #selector(rightBallButtonTouchDown), for: .touchDown)
         rightBallButton.addTarget(self, action: #selector(rightBallButtonTouchUp), for: .touchUpInside)
-
+        
         settingButton.addTarget(self, action: #selector(settingButtonTapped), for: .touchUpInside)
     }
     
@@ -230,11 +248,11 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func topBallButtonTouchDown() {
         ballImageView.image = UIImage(named: "ballTop")
-        presenter.endOfTheGame()
     }
     
     @objc private func topBallButtonTouchUp() {
         ballImageView.image = UIImage(named: "ballOff")
+        presenterHandler.tappRegister(by: "ballTop")
     }
     
     
@@ -244,6 +262,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func leftBallButtonTouchUp() {
         ballImageView.image = UIImage(named: "ballOff")
+        presenterHandler.tappRegister(by: "ballLeft")
     }
     
     
@@ -253,6 +272,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func bottomBallButtonTouchUp() {
         ballImageView.image = UIImage(named: "ballOff")
+        presenterHandler.tappRegister(by: "ballBot")
     }
     
     
@@ -262,15 +282,99 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func rightBallButtonTouchUp() {
         ballImageView.image = UIImage(named: "ballOff")
+        presenterHandler.tappRegister(by: "ballRight")
     }
     
     
     @objc private func settingButtonTapped() {
-        presenter.openSettings()
+        presenterRouting.openSettings()
+    }
+    
+    
+    
+//MARK: - Private gameplay methods
+    
+    private func startGame() {
+        let alert = UIAlertController(title: "", message: "Try to remember the button combination", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+            self.presenterHandler.addingExercise()
+        }))
+        present(alert, animated: true)
+    }
+    
+    
+    private func preparationForUsersAnswer(_ counter: Int) {
+        if counter <= 1 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                let alert = UIAlertController(title: "", message: "Try to repeate the button combination", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .cancel))
+                self.present(alert, animated: true)
+            }
+            presenterHandler.userWillAnswer()
+        } else {
+            presenterHandler.userWillAnswer()
+        }
     }
 }
+    
+    
 
+//MARK: - Implemendation of GamePlayScreenInputProtocol protocol for GamePlayScreenView class
+    
+extension GamePlayScreenView: GamePlayScreenInputProtocol {
+ 
+    func lightning(with imageNameArray: [String]) {
 
-
-//MARK: - Implemendation of AddNewInfoInterractorInputProtocol protocol for AddNewInfoInterractor class
-
+        var currentIndex = 0
+        
+        func setImageWithAnimation() {
+            if currentIndex < imageNameArray.count {
+                UIView.animate(withDuration: 0.5) {
+                    self.ballImageView.image = UIImage(named: imageNameArray[currentIndex])
+                } completion: { _ in
+                    currentIndex += 1
+                    sleep(1)
+                    setImageWithoutAnimation()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        setImageWithAnimation()
+                    }
+                }
+            } else {
+                preparationForUsersAnswer(currentIndex)
+                currentIndex = 0
+            }
+        }
+        
+        func setImageWithoutAnimation() {
+            UIView.animate(withDuration: 0.4) {
+                self.ballImageView.image = UIImage(named: "ballOff")
+            }
+        }
+        setImageWithAnimation()
+    }
+    
+    
+    func preparationForExersice(_ counter: Int) {
+        if counter < 1 {
+            let alert = UIAlertController(title: "", message: "Try to remember the button combination", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: { _ in
+                self.presenterHandler.addingExercise()
+            }))
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Great!", message: "Try again!", preferredStyle: .alert)
+            self.present(alert, animated: false)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                alert.dismiss(animated: false)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.presenterHandler.addingExercise()
+                }
+            }
+        }
+    }
+    
+    
+    func updateScoreLabel(with data: String) {
+        scoreLabel.text = data
+    }
+}

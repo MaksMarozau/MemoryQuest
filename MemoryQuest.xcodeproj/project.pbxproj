@@ -27,6 +27,7 @@
 		2DC6EA222B7CCE33003C74AD /* YouWinScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */; };
 		2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */; };
 		2DC6EA262B7CCE6D003C74AD /* YouWinScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */; };
+		2DC6EA292B7CE8C8003C74AD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA282B7CE8C8003C74AD /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenView.swift; sourceTree = "<group>"; };
 		2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenPresenter.swift; sourceTree = "<group>"; };
 		2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA282B7CE8C8003C74AD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				2DC6EA0A2B7BA1B5003C74AD /* view */,
 				2DC6EA0B2B7BA1BA003C74AD /* presenter */,
 				2DC6EA0C2B7BA1C3003C74AD /* router */,
+				2DC6EA272B7CE8B6003C74AD /* model */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -309,6 +312,14 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		2DC6EA272B7CE8B6003C74AD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA282B7CE8C8003C74AD /* GameModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -389,6 +400,7 @@
 				2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */,
 				2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */,
 				2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */,
+				2DC6EA292B7CE8C8003C74AD /* GameModel.swift in Sources */,
 				2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */,
 				2DC6EA1C2B7BDDFE003C74AD /* SettingsScreenRouter.swift in Sources */,
 				2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */,

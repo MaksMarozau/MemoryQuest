@@ -28,8 +28,10 @@ final class GamePlayScreenRouter {
         //MARK: - Making of dependencies
         
         let view = GamePlayScreenView()
-        let presenter = GamePlayScreenPresenter(router: self)
-        view.presenter = presenter
+        let model = GameModel()
+        let presenter = GamePlayScreenPresenter(router: self, view: view, model: model)
+        view.presenterRouting = presenter
+        view.presenterHandler = presenter
         
         navigationController.pushViewController(view, animated: true)
     }
