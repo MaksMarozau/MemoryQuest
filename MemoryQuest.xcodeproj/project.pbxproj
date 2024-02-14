@@ -9,19 +9,59 @@
 /* Begin PBXBuildFile section */
 		2DC6E9DB2B7B5DAD003C74AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9DA2B7B5DAD003C74AD /* AppDelegate.swift */; };
 		2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9DC2B7B5DAD003C74AD /* SceneDelegate.swift */; };
-		2DC6E9DF2B7B5DAD003C74AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9DE2B7B5DAD003C74AD /* ViewController.swift */; };
 		2DC6E9E42B7B5DB1003C74AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6E9E32B7B5DB1003C74AD /* Assets.xcassets */; };
 		2DC6E9E72B7B5DB1003C74AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6E9E52B7B5DB1003C74AD /* LaunchScreen.storyboard */; };
+		2DC6E9F52B7B616A003C74AD /* LoadingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9F42B7B616A003C74AD /* LoadingScreenView.swift */; };
+		2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9F62B7B618E003C74AD /* LoadingScreenPresenter.swift */; };
+		2DC6E9FB2B7B646C003C74AD /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9FA2B7B646C003C74AD /* UIView + Extension.swift */; };
+		2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */; };
+		2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */; };
+		2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */; };
+		2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */; };
+		2DC6EA0E2B7BA1EF003C74AD /* GamePlayScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */; };
+		2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */; };
+		2DC6EA122B7BA212003C74AD /* GamePlayScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */; };
+		2DC6EA182B7BDDC2003C74AD /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA172B7BDDC2003C74AD /* SettingsScreenView.swift */; };
+		2DC6EA1A2B7BDDE1003C74AD /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA192B7BDDE1003C74AD /* SettingsScreenPresenter.swift */; };
+		2DC6EA1C2B7BDDFE003C74AD /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA1B2B7BDDFE003C74AD /* SettingsScreenRouter.swift */; };
+		2DC6EA222B7CCE33003C74AD /* YouWinScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */; };
+		2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */; };
+		2DC6EA262B7CCE6D003C74AD /* YouWinScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */; };
+		2DC6EA292B7CE8C8003C74AD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA282B7CE8C8003C74AD /* GameModel.swift */; };
+		2DC6EA2C2B7D55CD003C74AD /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA2B2B7D55CD003C74AD /* SoundManager.swift */; };
+		2DC6EA2E2B7D574B003C74AD /* VibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA2D2B7D574B003C74AD /* VibrationManager.swift */; };
+		2DC6EA312B7D5B89003C74AD /* backgroundSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2DC6EA302B7D5B89003C74AD /* backgroundSound.mp3 */; };
+		2DC6EA332B7D5C73003C74AD /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA322B7D5C73003C74AD /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2DC6E9D72B7B5DAD003C74AD /* MemoryQuest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryQuest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DC6E9DA2B7B5DAD003C74AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DC6E9DC2B7B5DAD003C74AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DC6E9DE2B7B5DAD003C74AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2DC6E9E32B7B5DB1003C74AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DC6E9E62B7B5DB1003C74AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DC6E9E82B7B5DB1003C74AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DC6E9F42B7B616A003C74AD /* LoadingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenView.swift; sourceTree = "<group>"; };
+		2DC6E9F62B7B618E003C74AD /* LoadingScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6E9FA2B7B646C003C74AD /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA172B7BDDC2003C74AD /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA192B7BDDE1003C74AD /* SettingsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA1B2B7BDDFE003C74AD /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA282B7CE8C8003C74AD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		2DC6EA2B2B7D55CD003C74AD /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
+		2DC6EA2D2B7D574B003C74AD /* VibrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationManager.swift; sourceTree = "<group>"; };
+		2DC6EA302B7D5B89003C74AD /* backgroundSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundSound.mp3; sourceTree = "<group>"; };
+		2DC6EA322B7D5C73003C74AD /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +94,258 @@
 		2DC6E9D92B7B5DAD003C74AD /* MemoryQuest */ = {
 			isa = PBXGroup;
 			children = (
-				2DC6E9DA2B7B5DAD003C74AD /* AppDelegate.swift */,
-				2DC6E9DC2B7B5DAD003C74AD /* SceneDelegate.swift */,
-				2DC6E9DE2B7B5DAD003C74AD /* ViewController.swift */,
-				2DC6E9E32B7B5DB1003C74AD /* Assets.xcassets */,
-				2DC6E9E52B7B5DB1003C74AD /* LaunchScreen.storyboard */,
+				2DC6E9F82B7B6440003C74AD /* Support */,
+				2DC6E9EE2B7B60E4003C74AD /* Common */,
+				2DC6E9F12B7B6123003C74AD /* Modules */,
+				2DC6E9EF2B7B6100003C74AD /* Source */,
 				2DC6E9E82B7B5DB1003C74AD /* Info.plist */,
 			);
 			path = MemoryQuest;
+			sourceTree = "<group>";
+		};
+		2DC6E9EE2B7B60E4003C74AD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9DA2B7B5DAD003C74AD /* AppDelegate.swift */,
+				2DC6E9DC2B7B5DAD003C74AD /* SceneDelegate.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2DC6E9EF2B7B6100003C74AD /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA2F2B7D5B3D003C74AD /* Sounds */,
+				2DC6E9E32B7B5DB1003C74AD /* Assets.xcassets */,
+				2DC6E9E52B7B5DB1003C74AD /* LaunchScreen.storyboard */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		2DC6E9F02B7B610E003C74AD /* LoadingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9F22B7B613F003C74AD /* view */,
+				2DC6E9F32B7B6146003C74AD /* presenter */,
+				2DC6E9FC2B7B670B003C74AD /* router */,
+			);
+			path = LoadingScreen;
+			sourceTree = "<group>";
+		};
+		2DC6E9F12B7B6123003C74AD /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9F02B7B610E003C74AD /* LoadingScreen */,
+				2DC6E9FF2B7B7A27003C74AD /* MenuScreen */,
+				2DC6EA092B7BA1AA003C74AD /* GameScreen */,
+				2DC6EA132B7BDD2E003C74AD /* SettingsScreen */,
+				2DC6EA1D2B7CCDCF003C74AD /* YouWinScreen */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		2DC6E9F22B7B613F003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9F42B7B616A003C74AD /* LoadingScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6E9F32B7B6146003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9F62B7B618E003C74AD /* LoadingScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6E9F82B7B6440003C74AD /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA2A2B7D55B5003C74AD /* Managers */,
+				2DC6E9F92B7B644B003C74AD /* Extensions */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		2DC6E9F92B7B644B003C74AD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9FA2B7B646C003C74AD /* UIView + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2DC6E9FC2B7B670B003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6E9FD2B7B6736003C74AD /* LoadingScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6E9FF2B7B7A27003C74AD /* MenuScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA002B7B7A33003C74AD /* view */,
+				2DC6EA032B7B7A77003C74AD /* presenter */,
+				2DC6EA042B7B7A7E003C74AD /* router */,
+			);
+			path = MenuScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA002B7B7A33003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA012B7B7A65003C74AD /* MenuScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA032B7B7A77003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA052B7B7A99003C74AD /* MenuScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA042B7B7A7E003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA072B7B7AA8003C74AD /* MenuScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6EA092B7BA1AA003C74AD /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0A2B7BA1B5003C74AD /* view */,
+				2DC6EA0B2B7BA1BA003C74AD /* presenter */,
+				2DC6EA0C2B7BA1C3003C74AD /* router */,
+				2DC6EA272B7CE8B6003C74AD /* model */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA0A2B7BA1B5003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0D2B7BA1EF003C74AD /* GamePlayScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA0B2B7BA1BA003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA0F2B7BA200003C74AD /* GamePlayScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA0C2B7BA1C3003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA112B7BA212003C74AD /* GamePlayScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6EA132B7BDD2E003C74AD /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA162B7BDDAC003C74AD /* view */,
+				2DC6EA152B7BDDA6003C74AD /* presenter */,
+				2DC6EA142B7BDD99003C74AD /* router */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA142B7BDD99003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA1B2B7BDDFE003C74AD /* SettingsScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6EA152B7BDDA6003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA192B7BDDE1003C74AD /* SettingsScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA162B7BDDAC003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA172B7BDDC2003C74AD /* SettingsScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA1D2B7CCDCF003C74AD /* YouWinScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA1E2B7CCDF2003C74AD /* view */,
+				2DC6EA1F2B7CCDFE003C74AD /* presenter */,
+				2DC6EA202B7CCE06003C74AD /* router */,
+			);
+			path = YouWinScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA1E2B7CCDF2003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA1F2B7CCDFE003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA202B7CCE06003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		2DC6EA272B7CE8B6003C74AD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA282B7CE8C8003C74AD /* GameModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		2DC6EA2A2B7D55B5003C74AD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA2B2B7D55CD003C74AD /* SoundManager.swift */,
+				2DC6EA2D2B7D574B003C74AD /* VibrationManager.swift */,
+				2DC6EA322B7D5C73003C74AD /* UserDefaultsManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2DC6EA2F2B7D5B3D003C74AD /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA302B7D5B89003C74AD /* backgroundSound.mp3 */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,6 +406,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DC6EA312B7D5B89003C74AD /* backgroundSound.mp3 in Resources */,
 				2DC6E9E72B7B5DB1003C74AD /* LaunchScreen.storyboard in Resources */,
 				2DC6E9E42B7B5DB1003C74AD /* Assets.xcassets in Resources */,
 			);
@@ -134,9 +419,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DC6E9DF2B7B5DAD003C74AD /* ViewController.swift in Sources */,
+				2DC6EA122B7BA212003C74AD /* GamePlayScreenRouter.swift in Sources */,
+				2DC6EA222B7CCE33003C74AD /* YouWinScreenView.swift in Sources */,
+				2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */,
+				2DC6EA2E2B7D574B003C74AD /* VibrationManager.swift in Sources */,
+				2DC6EA332B7D5C73003C74AD /* UserDefaultsManager.swift in Sources */,
 				2DC6E9DB2B7B5DAD003C74AD /* AppDelegate.swift in Sources */,
+				2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */,
+				2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */,
+				2DC6EA0E2B7BA1EF003C74AD /* GamePlayScreenView.swift in Sources */,
+				2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */,
+				2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */,
+				2DC6EA2C2B7D55CD003C74AD /* SoundManager.swift in Sources */,
 				2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */,
+				2DC6EA292B7CE8C8003C74AD /* GameModel.swift in Sources */,
+				2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */,
+				2DC6EA1C2B7BDDFE003C74AD /* SettingsScreenRouter.swift in Sources */,
+				2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */,
+				2DC6E9FB2B7B646C003C74AD /* UIView + Extension.swift in Sources */,
+				2DC6E9F52B7B616A003C74AD /* LoadingScreenView.swift in Sources */,
+				2DC6EA262B7CCE6D003C74AD /* YouWinScreenRouter.swift in Sources */,
+				2DC6EA182B7BDDC2003C74AD /* SettingsScreenView.swift in Sources */,
+				2DC6EA1A2B7BDDE1003C74AD /* SettingsScreenPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
