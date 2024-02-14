@@ -1,5 +1,14 @@
 import UIKit
 
+//MARK: - Protocol for expansion SettingsScreenView to update data
+
+protocol SettingsScreenViewInputProtocol: AnyObject {
+    
+    func updateData(with data: [Bool])
+}
+
+
+
 //MARK: - Final class SettingsScreenView
 
 final class SettingsScreenView: UIViewController {
@@ -37,6 +46,7 @@ final class SettingsScreenView: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavBar()
+        presenter.loadSettings()
     }
     
     
@@ -165,8 +175,10 @@ final class SettingsScreenView: UIViewController {
         soundButton.isSelected.toggle()
         if soundButton.isSelected {
             soundButton.setBackgroundImage(UIImage(named: "soundOff"), for: .normal)
+            presenter.musicOff()
         } else {
             soundButton.setBackgroundImage(UIImage(named: "soundOn"), for: .normal)
+            presenter.musicON()
         }
     }
     
@@ -174,8 +186,32 @@ final class SettingsScreenView: UIViewController {
         vibroButton.isSelected.toggle()
         if vibroButton.isSelected {
             vibroButton.setBackgroundImage(UIImage(named: "vibroOff"), for: .normal)
+            presenter.vibroOff()
         } else {
             vibroButton.setBackgroundImage(UIImage(named: "vibroOn"), for: .normal)
+            presenter.vibroOn()
+        }
+    }
+}
+
+
+
+//MARK: - Implemendation of SettingsScreenViewInputProtocol protocol for GamePlayScreenView class
+
+extension SettingsScreenView: SettingsScreenViewInputProtocol {
+    
+    func updateData(with data: [Bool]) {
+        let soundStatus = data.first
+        let vibroStatus = data.last
+        
+        if soundStatus == false {
+            soundButton.isSelected = true
+            soundButton.setBackgroundImage(UIImage(named: "soundOff"), for: .normal)
+        }
+        
+        if vibroStatus == false {
+            vibroButton.isSelected = true
+            vibroButton.setBackgroundImage(UIImage(named: "vibroOff"), for: .normal)
         }
     }
 }

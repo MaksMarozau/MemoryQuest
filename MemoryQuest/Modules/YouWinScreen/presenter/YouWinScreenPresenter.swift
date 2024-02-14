@@ -1,3 +1,5 @@
+import Foundation
+
 //MARK: - Protocol for expansion YouWinScreenPresenter. Methods of moving to other screens
 
 protocol YouWinScreenPresenterProtocol {
@@ -5,6 +7,8 @@ protocol YouWinScreenPresenterProtocol {
     func openSettings()
     func openMenu()
     func restartTheGame()
+    
+    func loadData()
 }
 
 
@@ -17,9 +21,30 @@ final class YouWinScreenPresenter {
 //MARK: - Properties and init of class
     
     let router: YouWinScreenRouterInputProtocol
+    let view: YouWinScreenViewInputProtocol
     
-    init(router: YouWinScreenRouterInputProtocol) {
+    let currentScore: Int
+    private var bestScore = 0
+    
+    init(router: YouWinScreenRouterInputProtocol, view: YouWinScreenViewInputProtocol, score: Int) {
         self.router = router
+        self.view = view
+        self.currentScore = score
+    }
+    
+    private func loadingData() {
+        let result: Int = UserDefaultsManager.instance.loadScore()
+        bestScore = result
+    }
+    
+    private func saveScore() {
+        if currentScore > bestScore {
+            UserDefaultsManager.instance.saveScore(with: currentScore)
+        }
+    }
+    
+    private func updateData() {
+        view.updateScore(with: ["\(currentScore)", "\(bestScore)"])
     }
 }
 
@@ -28,6 +53,12 @@ final class YouWinScreenPresenter {
 //MARK: - Implemendation of the YouWinScreenPresenterProtocol
 
 extension YouWinScreenPresenter: YouWinScreenPresenterProtocol {
+    
+    func loadData() {
+        saveScore()
+        loadingData()
+        updateData()
+    }
     
     func openMenu() {
         router.moveToMenuScreen()

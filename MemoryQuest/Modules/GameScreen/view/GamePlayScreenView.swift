@@ -39,7 +39,7 @@ final class GamePlayScreenView: UIViewController {
     private let leftBallButton = UIButton()
     private let bottomBallButton = UIButton()
     private let rightBallButton = UIButton()
-    
+        
     
     
 //MARK: - Lifecycle of controller
@@ -248,6 +248,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func topBallButtonTouchDown() {
         ballImageView.image = UIImage(named: "ballTop")
+        VibrationManager.instance.vibro()
     }
     
     @objc private func topBallButtonTouchUp() {
@@ -258,6 +259,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func leftBallButtonTouchDown() {
         ballImageView.image = UIImage(named: "ballLeft")
+        VibrationManager.instance.vibro()
     }
     
     @objc private func leftBallButtonTouchUp() {
@@ -268,6 +270,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func bottomBallButtonTouchDown() {
         ballImageView.image = UIImage(named: "ballBot")
+        VibrationManager.instance.vibro()
     }
     
     @objc private func bottomBallButtonTouchUp() {
@@ -278,6 +281,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func rightBallButtonTouchDown() {
         ballImageView.image = UIImage(named: "ballRight")
+        VibrationManager.instance.vibro()
     }
     
     @objc private func rightBallButtonTouchUp() {
@@ -288,6 +292,7 @@ final class GamePlayScreenView: UIViewController {
     
     @objc private func settingButtonTapped() {
         presenterRouting.openSettings()
+        VibrationManager.instance.vibro()
     }
     
     

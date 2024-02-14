@@ -33,7 +33,7 @@ final class GamePlayScreenPresenter {
     
     let model: GameModel
     
-    private var counter = 0
+    private var score = 0
     
     
     init(router: GamePlayScreenRouterInputProtocol, view: GamePlayScreenInputProtocol, model: GameModel) {
@@ -54,7 +54,7 @@ extension GamePlayScreenPresenter: GamePlayScreenPresenterRoutingProtocol {
     }
     
     func endOfTheGame() {
-        router.moveToWinScreen()
+        router.moveToWinScreen(with: score)
     }
 }
 
@@ -73,14 +73,14 @@ extension GamePlayScreenPresenter: GamePlayScreenPresenterHandlerProtocol {
             model.lightingButtonsArray = []
             endOfTheGame()
         } else {
-            counter = counter + 1
-            view.updateScoreLabel(with: "\(counter)")
+            score = score + 1
+            view.updateScoreLabel(with: "\(score)")
         }
         
         let isCount = model.checkCountTapps()
         if isCount == true {
             model.nextRound()
-            view.preparationForExersice(counter)
+            view.preparationForExersice(score)
             model.usersTapps = []
         }
     }

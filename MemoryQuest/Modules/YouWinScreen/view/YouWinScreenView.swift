@@ -1,5 +1,14 @@
 import UIKit
 
+//MARK: - Protocol for expansion SettingsScreenView to update data.
+
+protocol YouWinScreenViewInputProtocol {
+    
+    func updateScore(with data: [String])
+}
+
+
+
 //MARK: - Final class YouWinScreenView
 
 final class YouWinScreenView: UIViewController {
@@ -47,6 +56,7 @@ final class YouWinScreenView: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavBar()
+        presenter.loadData()
     }
     
     
@@ -62,20 +72,20 @@ final class YouWinScreenView: UIViewController {
     
 //MARK: - Adding of subviews
         
-        private func addSubviews() {
-            
-            view.addSubview(mainContainerView)
-            mainContainerView.addSubviews(for: backgroundImageView, centerContainerView, topContainerView)
-            centerContainerView.addSubviews(for: centerButtonsView, scoreFrameImageView, greetingImageView)
-            centerButtonsView.addSubviews(for: menuButton, restartButton)
-            scoreFrameImageView.addSubviews(for: centerScoreLabel, centerBestScoreLabel)
-            
-            topContainerView.addSubviews(for: scoresContainerView, settingButton)
-            scoresContainerView.addSubviews(for: scoreImageView, mediumModeImageView)
-            
-            scoreImageView.addSubview(scoreLabel)
-            mediumModeImageView.addSubview(mediumModeLabel)
-        }
+    private func addSubviews() {
+        
+        view.addSubview(mainContainerView)
+        mainContainerView.addSubviews(for: backgroundImageView, centerContainerView, topContainerView)
+        centerContainerView.addSubviews(for: centerButtonsView, scoreFrameImageView, greetingImageView)
+        centerButtonsView.addSubviews(for: menuButton, restartButton)
+        scoreFrameImageView.addSubviews(for: centerScoreLabel, centerBestScoreLabel)
+        
+        topContainerView.addSubviews(for: scoresContainerView, settingButton)
+        scoresContainerView.addSubviews(for: scoreImageView, mediumModeImageView)
+        
+        scoreImageView.addSubview(scoreLabel)
+        mediumModeImageView.addSubview(mediumModeLabel)
+    }
     
     
     
@@ -195,11 +205,10 @@ final class YouWinScreenView: UIViewController {
         mediumModeImageView.image = UIImage(named: "mediumModeTitleImage")
         mediumModeImageView.contentMode = .scaleAspectFit
         
-        scoreLabel.text = "5"
         scoreLabel.textColor = .white
         
-        mediumModeLabel.text = "3"
         mediumModeLabel.textColor = .white
+        mediumModeLabel.text = "0"
         
         settingButton.setBackgroundImage(UIImage(named: "settingsButtonImage"), for: .normal)
         settingButton.contentMode = .scaleAspectFit
@@ -216,12 +225,10 @@ final class YouWinScreenView: UIViewController {
         restartButton.setBackgroundImage(UIImage(named: "restartImage"), for: .normal)
         restartButton.contentMode = .scaleAspectFit
         
-        centerScoreLabel.text = "15"
         centerScoreLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         centerScoreLabel.textColor = .customeYellow
         centerScoreLabel.textAlignment = .center
         
-        centerBestScoreLabel.text = "15"
         centerBestScoreLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         centerBestScoreLabel.textColor = .customeYellow
         centerBestScoreLabel.textAlignment = .center
@@ -253,5 +260,20 @@ final class YouWinScreenView: UIViewController {
     
     @objc private func restartButtonTapped() {
         presenter.restartTheGame()
+    }
+}
+
+
+
+//MARK: - Implemendation of YouWinScreenViewInputProtocol protocol for GamePlayScreenView class
+
+extension YouWinScreenView: YouWinScreenViewInputProtocol {
+    
+    func updateScore(with data: [String]) {
+        
+        scoreLabel.text = data.first
+        centerScoreLabel.text = data.first
+        
+        centerBestScoreLabel.text = data.last
     }
 }

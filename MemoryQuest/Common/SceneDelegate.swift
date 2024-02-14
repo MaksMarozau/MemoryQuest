@@ -23,6 +23,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.makeKeyAndVisible()
         
         self.window = window
+                
+        setSound()
         
         let _ = LoadingScreenRouter(navigationController: initialNavigationController, window: window)
     }
@@ -54,7 +56,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
+    
+    
+    private func saveFlag() {
+        //save sound status with the flag
+        UserDefaultsManager.instance.saveAppFlag()
+    }
+    
+    private func setSound() {
+        //set a flag when started for the first time to following checking of the sound status and set it if it is necceccery.
+        let flag = UserDefaultsManager.instance.loadAppFlag()
+        if flag == 1 {
+            let soundStatus = UserDefaultsManager.instance.loadSoundStatus()
+            print(soundStatus)
+            SoundManager.instance.sound(by: soundStatus)
+        } else {
+            SoundManager.instance.sound(by: true)
+            saveFlag()
+            UserDefaultsManager.instance.saveSoundStatus(true)
+        }
+    }
 }
 

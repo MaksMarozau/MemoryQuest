@@ -1,6 +1,7 @@
 import UIKit
+import SafariServices
 
-//MARK: - Protocol for expansion MenuScreenPresenter to move to another screen
+//MARK: - Protocol for expansion MenuScreenRouter to move to another screen
 
 protocol MenuScreenRouterInputProtocol {
     
@@ -45,7 +46,11 @@ final class MenuScreenRouter {
 extension MenuScreenRouter: MenuScreenRouterInputProtocol {
     
     func moveToPrivacyPolicyScreen() {
-        
+        guard let url = URL(string: "https://www.youtube.com") else {
+            return
+        }
+        let safariViewController = SFSafariViewController(url: url)
+        UIApplication.shared.keyWindow?.rootViewController?.present(safariViewController, animated: true)
     }
     
     

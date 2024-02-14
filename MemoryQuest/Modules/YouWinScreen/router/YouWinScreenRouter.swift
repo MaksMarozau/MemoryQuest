@@ -18,18 +18,21 @@ final class YouWinScreenRouter {
     let navigationController: UINavigationController
     let window: UIWindow
     
+    let score: Int
     
-    //MARK: - Initialization of properties
     
-    init(navigationController: UINavigationController, window: UIWindow) {
+//MARK: - Initialization of properties
+    
+    init(navigationController: UINavigationController, window: UIWindow, score: Int) {
         self.navigationController = navigationController
         self.window = window
+        self.score = score
         
         
-        //MARK: - Making of dependencies
+        //MARK: - Setting of dependencies
         
         let view = YouWinScreenView()
-        let presenter = YouWinScreenPresenter(router: self)
+        let presenter = YouWinScreenPresenter(router: self, view: view, score: self.score)
         view.presenter = presenter
         
         navigationController.pushViewController(view, animated: true)

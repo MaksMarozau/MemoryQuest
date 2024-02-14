@@ -4,7 +4,7 @@ import UIKit
 
 protocol GamePlayScreenRouterInputProtocol {
     
-    func moveToWinScreen()
+    func moveToWinScreen(with score: Int)
     func moveToSettingsScreen()
 }
 
@@ -48,11 +48,11 @@ extension GamePlayScreenRouter: GamePlayScreenRouterInputProtocol {
     }
     
     
-    func moveToWinScreen() {
+    func moveToWinScreen(with score: Int) {
         navigationController.popToRootViewController(animated: false)
         let clearNavigationController = UINavigationController()
         window.rootViewController = clearNavigationController
-        let _ = YouWinScreenRouter(navigationController: clearNavigationController, window: window)
+        let _ = YouWinScreenRouter(navigationController: clearNavigationController, window: window, score: score)
     }
 }
 

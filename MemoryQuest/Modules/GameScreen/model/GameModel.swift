@@ -1,12 +1,12 @@
 
 final class GameModel {
     
-    var round = 1
-    var count: Int = 0
+    private var round = 1
+    private var count: Int = 0
 
     private var lightingButton: LightingButtons = .none
-    var lightingButtonsArray: [String] = []
     
+    var lightingButtonsArray: [String] = []
     var usersTapps: [String] = []
 
     func lighting() {
@@ -32,8 +32,6 @@ final class GameModel {
             default:
                 break
             }
-        } else {
-            
         }
     }
     

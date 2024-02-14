@@ -27,7 +27,7 @@ final class SettingsScreenRouter {
         //MARK: - Making of dependencies
         
         let view = SettingsScreenView()
-        let presenter = SettingsScreenPresenter(router: self)
+        let presenter = SettingsScreenPresenter(router: self, view: view)
         view.presenter = presenter
         
         navigationController.pushViewController(view, animated: false)
@@ -43,8 +43,4 @@ extension SettingsScreenRouter: SettingsScreenRouterInputProtocol {
     func moveBack() {
         navigationController.popViewController(animated: false)
     }
-    
-    
-        
 }
-
