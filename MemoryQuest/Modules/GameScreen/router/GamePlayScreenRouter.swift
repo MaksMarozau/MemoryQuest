@@ -47,7 +47,10 @@ extension GamePlayScreenRouter: GamePlayScreenRouterInputProtocol {
     
     
     func moveToWinScreen() {
-        
+        navigationController.popToRootViewController(animated: false)
+        let clearNavigationController = UINavigationController()
+        window.rootViewController = clearNavigationController
+        let _ = YouWinScreenRouter(navigationController: clearNavigationController, window: window)
     }
 }
 

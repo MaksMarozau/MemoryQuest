@@ -24,6 +24,9 @@
 		2DC6EA182B7BDDC2003C74AD /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA172B7BDDC2003C74AD /* SettingsScreenView.swift */; };
 		2DC6EA1A2B7BDDE1003C74AD /* SettingsScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA192B7BDDE1003C74AD /* SettingsScreenPresenter.swift */; };
 		2DC6EA1C2B7BDDFE003C74AD /* SettingsScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA1B2B7BDDFE003C74AD /* SettingsScreenRouter.swift */; };
+		2DC6EA222B7CCE33003C74AD /* YouWinScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */; };
+		2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */; };
+		2DC6EA262B7CCE6D003C74AD /* YouWinScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		2DC6EA172B7BDDC2003C74AD /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		2DC6EA192B7BDDE1003C74AD /* SettingsScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenPresenter.swift; sourceTree = "<group>"; };
 		2DC6EA1B2B7BDDFE003C74AD /* SettingsScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenRouter.swift; sourceTree = "<group>"; };
+		2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenView.swift; sourceTree = "<group>"; };
+		2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenPresenter.swift; sourceTree = "<group>"; };
+		2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouWinScreenRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 				2DC6E9FF2B7B7A27003C74AD /* MenuScreen */,
 				2DC6EA092B7BA1AA003C74AD /* GameScreen */,
 				2DC6EA132B7BDD2E003C74AD /* SettingsScreen */,
+				2DC6EA1D2B7CCDCF003C74AD /* YouWinScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -268,6 +275,40 @@
 			path = view;
 			sourceTree = "<group>";
 		};
+		2DC6EA1D2B7CCDCF003C74AD /* YouWinScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA1E2B7CCDF2003C74AD /* view */,
+				2DC6EA1F2B7CCDFE003C74AD /* presenter */,
+				2DC6EA202B7CCE06003C74AD /* router */,
+			);
+			path = YouWinScreen;
+			sourceTree = "<group>";
+		};
+		2DC6EA1E2B7CCDF2003C74AD /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA212B7CCE33003C74AD /* YouWinScreenView.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		2DC6EA1F2B7CCDFE003C74AD /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA232B7CCE4E003C74AD /* YouWinScreenPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		2DC6EA202B7CCE06003C74AD /* router */ = {
+			isa = PBXGroup;
+			children = (
+				2DC6EA252B7CCE6D003C74AD /* YouWinScreenRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -339,18 +380,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DC6EA122B7BA212003C74AD /* GamePlayScreenRouter.swift in Sources */,
+				2DC6EA222B7CCE33003C74AD /* YouWinScreenView.swift in Sources */,
 				2DC6EA082B7B7AA8003C74AD /* MenuScreenRouter.swift in Sources */,
 				2DC6E9DB2B7B5DAD003C74AD /* AppDelegate.swift in Sources */,
 				2DC6EA062B7B7A99003C74AD /* MenuScreenPresenter.swift in Sources */,
 				2DC6E9F72B7B618E003C74AD /* LoadingScreenPresenter.swift in Sources */,
 				2DC6EA0E2B7BA1EF003C74AD /* GamePlayScreenView.swift in Sources */,
 				2DC6EA102B7BA200003C74AD /* GamePlayScreenPresenter.swift in Sources */,
+				2DC6EA242B7CCE4E003C74AD /* YouWinScreenPresenter.swift in Sources */,
 				2DC6E9DD2B7B5DAD003C74AD /* SceneDelegate.swift in Sources */,
 				2DC6E9FE2B7B6736003C74AD /* LoadingScreenRouter.swift in Sources */,
 				2DC6EA1C2B7BDDFE003C74AD /* SettingsScreenRouter.swift in Sources */,
 				2DC6EA022B7B7A65003C74AD /* MenuScreenView.swift in Sources */,
 				2DC6E9FB2B7B646C003C74AD /* UIView + Extension.swift in Sources */,
 				2DC6E9F52B7B616A003C74AD /* LoadingScreenView.swift in Sources */,
+				2DC6EA262B7CCE6D003C74AD /* YouWinScreenRouter.swift in Sources */,
 				2DC6EA182B7BDDC2003C74AD /* SettingsScreenView.swift in Sources */,
 				2DC6EA1A2B7BDDE1003C74AD /* SettingsScreenPresenter.swift in Sources */,
 			);
