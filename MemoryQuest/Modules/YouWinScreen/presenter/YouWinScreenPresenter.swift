@@ -55,8 +55,8 @@ final class YouWinScreenPresenter {
 extension YouWinScreenPresenter: YouWinScreenPresenterProtocol {
     
     func loadData() {
-        saveScore()
         loadingData()
+        saveScore()
         updateData()
     }
     
